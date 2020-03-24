@@ -26,7 +26,7 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
 	<key>WKCompanionAppBundleIdentifier</key>
-	<string>org.jitsi.meet</string>
+	<string>lavid.v4h.org.jitsi.meet</string>
 	<key>WKWatchKitApp</key>
 	<true/>
 </dict>
