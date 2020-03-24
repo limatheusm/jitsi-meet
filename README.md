@@ -1,3 +1,46 @@
+# Lavid-dev
+
+## Prerequisites
+
+- [React Native](https://facebook.github.io/react-native/docs/getting-started)
+- [NPM](https://www.npmjs.com/)
+
+## Get Started
+
+### Heads up! We will be working on the `lavid-dev` branch
+
+Open your command prompt and run the following commands:
+
+```
+$ git clone https://github.com/limatheusm/jitsi-meet.git
+
+$ cd jitsi-meet
+
+$ git fetch && git checkout lavid-dev
+
+$ npm i
+```
+
+# How to build
+
+### iOS
+Dependencies in this project are provided via [Cocoapods](https://cocoapods.org).
+Please install all dependecies with
+
+```bash
+$ cd ios && pod install
+```
+
+```bash
+$ cd .. && npm run ios
+```
+
+### Android
+
+```bash
+$ npm run android
+```
+
 # Jitsi Meet - Secure, Simple and Scalable Video Conferences
 
 Jitsi Meet is an open-source (Apache) WebRTC JavaScript application that uses [Jitsi Videobridge](https://jitsi.org/videobridge) to provide high quality, [secure](#security) and scalable video conferences. Jitsi Meet in action can be seen at [here at the session #482 of the VoIP Users Conference](http://youtu.be/7vFUVClsNh0).
@@ -61,7 +104,7 @@ Jitsi Meet provides a very flexible way of embedding in external applications by
 
 ## Security
 
-WebRTC does not (yet) provide a way of conducting multi-party conversations with end-to-end encryption. 
+WebRTC does not (yet) provide a way of conducting multi-party conversations with end-to-end encryption.
 Unless you consistently compare DTLS fingerprints with your peers vocally, the same goes for one-to-one calls.
 As a result, your stream is encrypted on the network but decrypted on the machine that hosts the bridge when using Jitsi Meet.
 
