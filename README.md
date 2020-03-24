@@ -7,7 +7,7 @@
 
 ## Get Started
 
-### Heads up! We will be working on the `lavid-dev` branch
+### Heads up! We will be working in the `lavid-dev` branch
 
 Open your command prompt and run the following commands:
 
