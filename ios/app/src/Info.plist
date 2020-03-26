@@ -24,22 +24,22 @@
 	<array>
 		<dict>
 			<key>CFBundleTypeRole</key>
-			<string>Viewer</string>
-			<key>CFBundleURLName</key>
-			<string>org.jitsi.meet</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>org.jitsi.meet</string>
-			</array>
-		</dict>
-		<dict>
-			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
 			<string>com.googleusercontent.apps</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>com.googleusercontent.apps.your-id-here</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+			<key>CFBundleURLName</key>
+			<string>conf.v4h.cloud</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>conf.v4h.cloud</string>
 			</array>
 		</dict>
 	</array>
