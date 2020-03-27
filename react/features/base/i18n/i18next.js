@@ -5,7 +5,7 @@ import I18nextXHRBackend from 'i18next-xhr-backend';
 
 import COUNTRIES_RESOURCES from 'i18n-iso-countries/langs/en.json';
 import LANGUAGES_RESOURCES from '../../../../lang/languages.json';
-import MAIN_RESOURCES from '../../../../lang/main.json';
+import MAIN_RESOURCES from '../../../../lang/main-ptBR.json';
 
 import languageDetector from './languageDetector';
 

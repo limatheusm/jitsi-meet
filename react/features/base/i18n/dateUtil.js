@@ -23,13 +23,13 @@ require('moment/locale/nb');
 
 require('moment/locale/pl');
 require('moment/locale/pt');
-require('moment/locale/pt-br');
 require('moment/locale/ru');
 require('moment/locale/sk');
 require('moment/locale/sl');
 require('moment/locale/sv');
 require('moment/locale/tr');
 require('moment/locale/zh-cn');
+require('moment/locale/pt-br');
 
 /**
  * Returns a localized date formatter initialized with a specific {@code Date}
