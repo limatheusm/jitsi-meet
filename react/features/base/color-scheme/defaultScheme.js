@@ -24,18 +24,19 @@ export default {
         replyIcon: 'rgb(94, 109, 121)'
     },
     'Conference': {
-        inviteButtonBackground: 'rgb(0, 119, 225)',
+        inviteButtonBackground: getRGBAFormat('#202249'),
         onVideoText: 'white'
     },
     'Dialog': {
         border: 'rgba(0, 3, 6, 0.6)',
-        buttonBackground: ColorPalette.blue,
+        buttonBackground: ColorPalette.purpleHighlight,
         buttonLabel: ColorPalette.white
     },
     'Header': {
-        background: ColorPalette.blue,
-        icon: ColorPalette.white,
-        statusBar: ColorPalette.blueHighlight,
+        background: ColorPalette.purpleHighlight,
+
+        // icon: ColorPalette.white,
+        statusBar: ColorPalette.purple,
         statusBarContent: ColorPalette.white,
         text: ColorPalette.white
     },
@@ -51,7 +52,7 @@ export default {
         background: 'rgb(94, 109, 122)'
     },
     'Toolbox': {
-        button: 'rgb(255, 255, 255)',
+        button: getRGBAFormat(ColorPalette.green),
         buttonToggled: 'rgb(38, 58, 76)',
         buttonToggledBorder: getRGBAFormat('#a4b8d1', 0.6),
         hangup: 'rgb(225, 45, 45)'

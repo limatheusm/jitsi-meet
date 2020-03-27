@@ -3,10 +3,13 @@
 import React, { Component } from 'react';
 
 import { translate } from '../../base/i18n';
-import { IconEventNote, IconRestore } from '../../base/icons';
+
+// add aqui IconEventNode
+import { IconRestore } from '../../base/icons';
 import { PagedList } from '../../base/react';
 import { connect } from '../../base/redux';
-import { CalendarList, isCalendarEnabled } from '../../calendar-sync';
+
+// import { CalendarList, isCalendarEnabled } from '../../calendar-sync';
 import { RecentList } from '../../recent-list';
 
 import { setWelcomePageListsDefaultPage } from '../actions';
@@ -64,7 +67,8 @@ class WelcomePageLists extends Component<Props> {
      * @inheritdoc
      */
     render() {
-        const { _calendarEnabled, _defaultPage, t } = this.props;
+        // add aqui _calendarEnabled
+        const { _defaultPage, t } = this.props;
 
         if (typeof _defaultPage === 'undefined') {
             return null;
@@ -78,15 +82,16 @@ class WelcomePageLists extends Component<Props> {
             }
         ];
 
-        if (_calendarEnabled) {
-            pages.push(
-                {
-                    component: CalendarList,
-                    icon: IconEventNote,
-                    title: t('welcomepage.calendar')
-                }
-            );
-        }
+        // AQUI ESTÁ O TABNAVIGATION
+        // if (_calendarEnabled) {
+        //     pages.push(
+        //         {
+        //             component: CalendarList,
+        //             icon: IconEventNote,
+        //             title: t('welcomepage.calendar')
+        //         }
+        //     );
+        // }
 
         return (
             <PagedList
@@ -132,7 +137,7 @@ function _mapStateToProps(state: Object) {
     }
 
     return {
-        _calendarEnabled: isCalendarEnabled(state),
+        // _calendarEnabled: isCalendarEnabled(state),
         _defaultPage: defaultPage
     };
 }

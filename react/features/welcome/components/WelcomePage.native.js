@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {
     Animated,
@@ -5,15 +6,16 @@ import {
     SafeAreaView,
     TextInput,
     TouchableHighlight,
-    TouchableOpacity,
-    View
+    View,
+    Image
 } from 'react-native';
 
 import { getName } from '../../app';
 
 import { ColorSchemeRegistry } from '../../base/color-scheme';
 import { translate } from '../../base/i18n';
-import { Icon, IconMenu } from '../../base/icons';
+
+// import { Icon, IconMenu } from '../../base/icons';
 import { MEDIA_TYPE } from '../../base/media';
 import { Header, LoadingIndicator, Text } from '../../base/react';
 import { connect } from '../../base/redux';
@@ -145,18 +147,17 @@ class WelcomePage extends AbstractWelcomePage {
                 _fieldFocused: true
             });
 
-        Animated.timing(
-            this.state.hintBoxAnimation,
-            {
-                duration: 300,
-                toValue: focused ? 1 : 0
-            })
-            .start(animationState =>
+        Animated.timing(this.state.hintBoxAnimation, {
+            duration: 300,
+            toValue: focused ? 1 : 0
+        }).start(
+            animationState =>
                 animationState.finished
-                    && !focused
-                    && this.setState({
-                        _fieldFocused: false
-                    }));
+                && !focused
+                && this.setState({
+                    _fieldFocused: false
+                })
+        );
     }
 
     /**
@@ -182,13 +183,13 @@ class WelcomePage extends AbstractWelcomePage {
 
             return (
                 <Animated.View style = { this._getHintBoxStyle() }>
-                    <View style = { styles.hintTextContainer } >
+                    <View style = { styles.hintTextContainer }>
                         <Text style = { styles.hintText }>
-                            { t('welcomepage.roomnameHint') }
+                            {t('welcomepage.roomnameHint')}
                         </Text>
                     </View>
-                    <View style = { styles.hintButtonContainer } >
-                        { this._renderJoinButton() }
+                    <View style = { styles.hintButtonContainer }>
+                        {this._renderJoinButton()}
                     </View>
                 </Animated.View>
             );
@@ -207,7 +208,6 @@ class WelcomePage extends AbstractWelcomePage {
         const { t } = this.props;
         let children;
 
-
         if (this.state.joining) {
             // TouchableHighlight is picky about what its children can be, so
             // wrap it in a native component, i.e. View to avoid having to
@@ -222,18 +222,16 @@ class WelcomePage extends AbstractWelcomePage {
         } else {
             children = (
                 <Text style = { styles.buttonText }>
-                    { this.props.t('welcomepage.join') }
+                    {this.props.t('welcomepage.join')}
                 </Text>
             );
         }
-
 
         const buttonDisabled = this._isJoinDisabled();
 
         return (
             <TouchableHighlight
-                accessibilityLabel =
-                    { t('welcomepage.accessibilityLabel.join') }
+                accessibilityLabel = { t('welcomepage.accessibilityLabel.join') }
                 disabled = { buttonDisabled }
                 onPress = { this._onJoin }
                 style = { [
@@ -241,7 +239,7 @@ class WelcomePage extends AbstractWelcomePage {
                     buttonDisabled ? styles.buttonDisabled : null
                 ] }
                 underlayColor = { ColorPalette.white }>
-                { children }
+                {children}
             </TouchableHighlight>
         );
     }
@@ -259,15 +257,26 @@ class WelcomePage extends AbstractWelcomePage {
             <LocalVideoTrackUnderlay style = { styles.welcomePage }>
                 <View style = { _headerStyles.page }>
                     <Header style = { styles.header }>
-                        <TouchableOpacity onPress = { this._onShowSideBar } >
+                        <Image
+                            style = {{
+                                width: 40,
+                                height: 40
+                            }}
+                            // eslint-disable-next-line react/jsx-sort-props
+                            source = { require('./splashicon.png') } />
+                        {
+
+                            // AQUI ESTÁ O DRAWER
+                            /* <TouchableOpacity onPress = { this._onShowSideBar } >
                             <Icon
                                 src = { IconMenu }
                                 style = { _headerStyles.headerButtonIcon } />
-                        </TouchableOpacity>
+                        </TouchableOpacity> */
+                        }
                         <VideoSwitch />
                     </Header>
-                    <SafeAreaView style = { styles.roomContainer } >
-                        <View style = { styles.joinControls } >
+                    <SafeAreaView style = { styles.roomContainer }>
+                        <View style = { styles.joinControls }>
                             <TextInput
                                 accessibilityLabel = { t(roomnameAccLabel) }
                                 autoCapitalize = 'none'
@@ -279,16 +288,12 @@ class WelcomePage extends AbstractWelcomePage {
                                 onFocus = { this._onFieldFocus }
                                 onSubmitEditing = { this._onJoin }
                                 placeholder = { t('welcomepage.roomname') }
-                                placeholderTextColor = {
-                                    PLACEHOLDER_TEXT_COLOR
-                                }
+                                placeholderTextColor = { PLACEHOLDER_TEXT_COLOR }
                                 returnKeyType = { 'go' }
                                 style = { styles.textInput }
                                 underlineColorAndroid = 'transparent'
                                 value = { this.state.room } />
-                            {
-                                this._renderHintBox()
-                            }
+                            {this._renderHintBox()}
                         </View>
                     </SafeAreaView>
                     <WelcomePageLists disabled = { this.state._fieldFocused } />
@@ -311,7 +316,7 @@ class WelcomePage extends AbstractWelcomePage {
         return (
             <View style = { styles.reducedUIContainer }>
                 <Text style = { styles.reducedUIText }>
-                    { t('welcomepage.reducedUIText', { app: getName() }) }
+                    {t('welcomepage.reducedUIText', { app: getName() })}
                 </Text>
             </View>
         );
