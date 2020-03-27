@@ -4,8 +4,8 @@ import React, { Component } from 'react';
 
 import { translate } from '../../base/i18n';
 
-// Para adicionar um icon ao TabNavigation utilize
-// import {IconEventNode} from '../../base/icons' [SM]
+// Para adicionar um icon ao TabNavigation utilize[SM]
+// import {IconEventNode} from '../../base/icons'
 import { IconRestore } from '../../base/icons';
 import { PagedList } from '../../base/react';
 import { connect } from '../../base/redux';
@@ -84,7 +84,7 @@ class WelcomePageLists extends Component<Props> {
             }
         ];
 
-        // Escondendo o tab navigation [SM]
+        // Escondendo o tabnavigation [SM]
         // const {_calendarEnabled} = this.props;
         // if (_calendarEnabled) {
         //     pages.push(
