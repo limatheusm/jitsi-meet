@@ -4,11 +4,14 @@ import React, { Component } from 'react';
 
 import { translate } from '../../base/i18n';
 
-// add aqui IconEventNode
+// Para adicionar um icon ao TabNavigation utilize
+// import {IconEventNode} from '../../base/icons' [SM]
 import { IconRestore } from '../../base/icons';
 import { PagedList } from '../../base/react';
 import { connect } from '../../base/redux';
 
+// Para acessar a lista de Atividades do calendario a partir do TabNavigation
+// utilize esse import [SM]
 // import { CalendarList, isCalendarEnabled } from '../../calendar-sync';
 import { RecentList } from '../../recent-list';
 
@@ -67,7 +70,6 @@ class WelcomePageLists extends Component<Props> {
      * @inheritdoc
      */
     render() {
-        // add aqui _calendarEnabled
         const { _defaultPage, t } = this.props;
 
         if (typeof _defaultPage === 'undefined') {
@@ -82,7 +84,8 @@ class WelcomePageLists extends Component<Props> {
             }
         ];
 
-        // AQUI ESTÁ O TABNAVIGATION
+        // Escondendo o tab navigation [SM]
+        // const {_calendarEnabled} = this.props;
         // if (_calendarEnabled) {
         //     pages.push(
         //         {
@@ -137,6 +140,8 @@ function _mapStateToProps(state: Object) {
     }
 
     return {
+        // Para utilizar as Atividades do calendario com o TabNavigation
+        // utilize [SM]
         // _calendarEnabled: isCalendarEnabled(state),
         _defaultPage: defaultPage
     };

@@ -15,6 +15,8 @@ import { getName } from '../../app';
 import { ColorSchemeRegistry } from '../../base/color-scheme';
 import { translate } from '../../base/i18n';
 
+// Se deseja utilizar icones no Header como para um Drawer
+// utilize esse Icon aqui
 // import { Icon, IconMenu } from '../../base/icons';
 import { MEDIA_TYPE } from '../../base/media';
 import { Header, LoadingIndicator, Text } from '../../base/react';
@@ -266,7 +268,7 @@ class WelcomePage extends AbstractWelcomePage {
                             source = { require('./splashicon.png') } />
                         {
 
-                            // AQUI ESTÁ O DRAWER
+                            // Escondendo o Drawer
                             /* <TouchableOpacity onPress = { this._onShowSideBar } >
                             <Icon
                                 src = { IconMenu }

@@ -1,6 +1,6 @@
 // @flow
 
-import { ColorPalette, getRGBAFormat } from '../styles';
+import { ColorPalette } from '../styles';
 
 /**
  * The default color scheme of the application.
@@ -24,7 +24,7 @@ export default {
         replyIcon: 'rgb(94, 109, 121)'
     },
     'Conference': {
-        inviteButtonBackground: getRGBAFormat('#202249'),
+        inviteButtonBackground: '#202249',
         onVideoText: 'white'
     },
     'Dialog': {
@@ -34,8 +34,7 @@ export default {
     },
     'Header': {
         background: ColorPalette.purpleHighlight,
-
-        // icon: ColorPalette.white,
+        icon: ColorPalette.white,
         statusBar: ColorPalette.purple,
         statusBarContent: ColorPalette.white,
         text: ColorPalette.white
@@ -52,9 +51,9 @@ export default {
         background: 'rgb(94, 109, 122)'
     },
     'Toolbox': {
-        button: getRGBAFormat(ColorPalette.green),
+        button: ColorPalette.green,
         buttonToggled: 'rgb(38, 58, 76)',
-        buttonToggledBorder: getRGBAFormat('#a4b8d1', 0.6),
+        buttonToggledBorder: '#a4b8d1',
         hangup: 'rgb(225, 45, 45)'
     }
 };
