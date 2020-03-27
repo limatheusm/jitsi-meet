@@ -3,10 +3,16 @@
 import React, { Component } from 'react';
 
 import { translate } from '../../base/i18n';
-import { IconEventNote, IconRestore } from '../../base/icons';
+
+// Para adicionar um icon ao TabNavigation utilize[SM]
+// import {IconEventNode} from '../../base/icons'
+import { IconRestore } from '../../base/icons';
 import { PagedList } from '../../base/react';
 import { connect } from '../../base/redux';
-import { CalendarList, isCalendarEnabled } from '../../calendar-sync';
+
+// Para acessar a lista de Atividades do calendario a partir do TabNavigation
+// utilize esse import [SM]
+// import { CalendarList, isCalendarEnabled } from '../../calendar-sync';
 import { RecentList } from '../../recent-list';
 
 import { setWelcomePageListsDefaultPage } from '../actions';
@@ -64,7 +70,7 @@ class WelcomePageLists extends Component<Props> {
      * @inheritdoc
      */
     render() {
-        const { _calendarEnabled, _defaultPage, t } = this.props;
+        const { _defaultPage, t } = this.props;
 
         if (typeof _defaultPage === 'undefined') {
             return null;
@@ -78,15 +84,17 @@ class WelcomePageLists extends Component<Props> {
             }
         ];
 
-        if (_calendarEnabled) {
-            pages.push(
-                {
-                    component: CalendarList,
-                    icon: IconEventNote,
-                    title: t('welcomepage.calendar')
-                }
-            );
-        }
+        // Escondendo o tabnavigation [SM]
+        // const {_calendarEnabled} = this.props;
+        // if (_calendarEnabled) {
+        //     pages.push(
+        //         {
+        //             component: CalendarList,
+        //             icon: IconEventNote,
+        //             title: t('welcomepage.calendar')
+        //         }
+        //     );
+        // }
 
         return (
             <PagedList
@@ -132,7 +140,9 @@ function _mapStateToProps(state: Object) {
     }
 
     return {
-        _calendarEnabled: isCalendarEnabled(state),
+        // Para utilizar as Atividades do calendario com o TabNavigation
+        // utilize [SM]
+        // _calendarEnabled: isCalendarEnabled(state),
         _defaultPage: defaultPage
     };
 }
